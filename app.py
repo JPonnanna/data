@@ -71,14 +71,17 @@ if st.button("Save Data"):
     })
 
     # Append data to the CSV file
-    input_data.to_csv(csv_file, mode='a', header=not pd.io.common.file_exists(csv_file), index=False)
+    import os
+
+    input_data.to_csv(csv_file, mode='a', header=not os.path.exists(csv_file), index=False)
     st.success("✅ Data saved successfully!")
+
+    #st.success("✅ Data saved successfully!")
 
     if st.button("Show Saved Data"):
         try:
             saved_data = pd.read_csv(csv_file)
             st.write("Saved Data:")
             st.write(saved_data.tail())  # Display last few rows
-        except Exception as e:
-            st.error(f"Error reading CSV file: {e}")
+
     
