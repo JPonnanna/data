@@ -7,6 +7,10 @@ csv_file = 'data.csv'
 # Streamlit form layout
 st.title("🧠 Brain Stroke Risk Data Entry")
 
+s_data = pd.read_csv(csv_file)
+st.write("Data")
+st.write(s_data.head())
+
 # Layout for form input
 col1, col2 = st.columns(2)
 
