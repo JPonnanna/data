@@ -71,10 +71,10 @@ if st.button("Save Data"):
     st.success("✅ Data saved successfully!")
 
     if st.button("Show Saved Data"):
-    try:
-        saved_data = pd.read_csv(csv_file)
-        st.write("Saved Data:")
-        st.write(saved_data.tail())  # Display last few rows
-    except Exception as e:
-        st.error(f"Error reading CSV file: {e}")
-
+        try:
+            saved_data = pd.read_csv(csv_file)
+            st.write("Saved Data:")
+            st.write(saved_data.tail())  # Display last few rows
+        except Exception as e:
+            st.error(f"Error reading CSV file: {e}")
+    
